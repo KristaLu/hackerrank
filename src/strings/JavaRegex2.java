@@ -6,9 +6,11 @@ import java.util.regex.Pattern;
 
 public class JavaRegex2 {
     public static void main(String[] args) {
-        String regex = "\\b(\\w+)(\\W+\\1\\b)+";
+
+        String regex = "\\b(\\w+)(\\b\\W+\\b\\1\\b)*";
+        //String regex = "\\b(\\w+)(\\W+\\1\\b)+";
         //String regex = "(\\b\\w+\\b)(\\s*\\1\\b)+";
-        Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        Pattern p = Pattern.compile(regex, Pattern.MULTILINE+Pattern.CASE_INSENSITIVE);
 
         Scanner in = new Scanner(System.in);
         int numSentences = Integer.parseInt(in.nextLine());
